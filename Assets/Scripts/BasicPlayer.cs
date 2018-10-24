@@ -28,15 +28,21 @@ public class BasicPlayer : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerStay(Collider col){
-		transform.localScale *= 1.01f;
+	//OnTriggerStay will run any frame in which our collider is inside of a trigger object (collider marked as trigger in the inspector)
+	void OnTriggerStay(Collider col){ //triggers dont cause collisions, which is why we use a collider to keep track on the trigger information
+		transform.localScale *= 1.01f; //for every frame in which we are inside the trigger, increase the scale by 1%
 	}
 
-	void OnCollisionEnter(Collision col){
-		if (col.gameObject.CompareTag("playable")){
+	//OnCollisionEnter will run anytime a collision has begun
+	void OnCollisionEnter(Collision col){ //it creates a new Collision to store the information about our collision. we called it col.
+		if (col.gameObject.CompareTag("playable")){ //we want to check the tag of the thing we collided with (is it "playable"?)
+			
+			//we compare the scale of the transform of whatever this script is attached to (transform.lossyScale) against the one we collided with
 			if (transform.lossyScale.sqrMagnitude > col.transform.lossyScale.sqrMagnitude ){
+				//if we are larger, "eat it" (set active to false)
 				col.gameObject.SetActive(false);
 			} else {
+				//otherwise, set us to inactive
 				gameObject.SetActive(false);
 			}
 		}

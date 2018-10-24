@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.SceneManagement;
 
 public class BasicPlayer : MonoBehaviour {
 
@@ -44,8 +45,14 @@ public class BasicPlayer : MonoBehaviour {
 			} else {
 				//otherwise, set us to inactive
 				gameObject.SetActive(false);
+				//Invoke("reload", 1f);
 			}
 		}
 	}
 
+/*
+	void reload(){
+		SceneManager.LoadScene(0);
+	}
+*/
 }

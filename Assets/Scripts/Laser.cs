@@ -5,16 +5,12 @@ using UnityEngine;
 public class Laser : MonoBehaviour {
 	public GameObject blueprint;
 	// Use this for initialization
-	void Start () {
-		
+	void Start () {	
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		Ray laser = Camera.main.ScreenPointToRay(Input.mousePosition);
-
 		RaycastHit hit = new RaycastHit();
-
 		if (Physics.Raycast(laser, out hit, 1000f)){
 			if (Input.GetMouseButton(0)){
 				GetComponent<AudioSource>().Play();
@@ -33,7 +29,6 @@ public class Laser : MonoBehaviour {
 
 			if (Input.GetMouseButton(1)){
 				Instantiate(blueprint, hit.point, Quaternion.identity);
-
 			}
 		}
 	}

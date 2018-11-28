@@ -14,17 +14,18 @@ public class BasicPhysics : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		myBody.velocity = Vector3.zero;
 		if (Input.GetKey(KeyCode.W)){
-			myBody.AddForce(Vector3.forward * forceAmt);
+			myBody.AddForce(transform.forward * forceAmt);
 		}
 		if (Input.GetKey(KeyCode.S)){
-			myBody.AddForce(Vector3.back * forceAmt);
+			myBody.AddForce(-transform.forward * forceAmt);
 		}
 		if (Input.GetKey(KeyCode.A)){
-			myBody.AddForce(Vector3.left * forceAmt);
+			myBody.AddForce(-transform.right * forceAmt);
 		}
 		if (Input.GetKey(KeyCode.D)){
-			myBody.AddForce(Vector3.right * forceAmt);
+			myBody.AddForce(transform.right * forceAmt);
 		}
 	}
 }

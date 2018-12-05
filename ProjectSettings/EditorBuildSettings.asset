@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Week7.unity
     guid: f91e1136226775c4a8cf69c8fd70ea50
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Week13.unity
     guid: 7dd42022a6de77f47be9531a5e3f58d0
+  - enabled: 1
+    path: Assets/Scenes/Week14.unity
+    guid: db3edb2c99632db43a5f7d738da9c940
   m_configObjects: {}
